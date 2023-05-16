@@ -1,0 +1,26 @@
+@font-face {
+    font-family: KumbhSans-Regular;
+    src: url(src/fonts/KumbhSans/KumbhSans-Regular.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: KumbhSans-Bold;
+    src: url(src/fonts/KumbhSans/KumbhSans-Bold.ttf) format(truetype);
+}
+
+
+$borderRadius: 0.5rem;
+$primaryOrange: hsl(26, 100%, 55%);
+$primaryPaleOrange: hsl(25, 100%, 94%);
+$sideBarSplitWidth: 880px;
+$mobileWidth: 500px;
+$veryVarkBlue: hsl(220, 13%, 13%);
+$darkGrayishBlue: hsl(219, 9%, 45%);
+$grayishBlue: hsl(220, 14%, 75%);
+$lightGrayishBlue: hsl(223, 64%, 98%);
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
