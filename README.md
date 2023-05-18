@@ -104,4 +104,4 @@ This project make me aware about a lot of production and deployment requirements
 
 
 ## Author
-- Frontend Mentor - [@doukous](hhttps://www.frontendmentor.io/profile/doukous)
+- Frontend Mentor - [@doukous](https://www.frontendmentor.io/profile/doukous)
