@@ -1,11 +1,13 @@
-const getImagesPaths = () => {
+const images = import.meta.glob('../assets/images/image-product-*.jpg', {eager: true})
+
+const getImagesRoutes = () => {
     const imageDictList = []
 
     for (let i = 1; i < 5; i++) {
         imageDictList.push(
             {
-                thumb : new URL('../assets/images/image-product-' + i + '-thumbnail.jpg', import.meta.url).href,
-                main: new URL('../assets/images/image-product-' + i + '.jpg', import.meta.url).href 
+                thumb : images['../assets/images/image-product-' + i + '-thumbnail.jpg'].default,
+                main: images['../assets/images/image-product-' + i + '.jpg'].default 
             }
         )
     }
@@ -13,4 +15,4 @@ const getImagesPaths = () => {
     return imageDictList
 }
 
-export const ProductsImagesRoutes = getImagesPaths()
+export const ImagesRoutes = getImagesRoutes()

@@ -1,14 +1,11 @@
 import React from "react";
-import '../assets/styles/product-section.scss'
-import { ProductsImagesRoutes } from "../data/ProductsImagesRoutes";
 import { IconsImagesRoutes } from "../data/IconsImagesRoutes";
+import { ImagesRoutes } from "../data/ProductsImagesRoutes";
 import { useItemAdjust } from "../hooks/useItemAdjust"
 import { useHandlePopupImage } from "../hooks/useHandlePopupImage";
 import { useSetDisplayState } from "../hooks/useSetDisplayState";
+import '../assets/styles/product-section.scss'
 
-
-const ProductImages = ProductsImagesRoutes
-const IconsImages = IconsImagesRoutes
 
 export const ProductSection = (props) => {
 
@@ -28,7 +25,7 @@ export const ProductSection = (props) => {
                     <div className="popup-image">
 
                         <div className="image-container">
-                            <img className="main-image" src={ProductImages[mainImageIndex].main}
+                            <img className="main-image" src={ImagesRoutes[mainImageIndex].main}
                                 alt="displayed image"
                             />
 
@@ -48,7 +45,7 @@ export const ProductSection = (props) => {
                         </div>
                         
                         <div className="thumbnails-images">
-                            {ProductImages.map((image, key) => {
+                            {ImagesRoutes.map((image, key) => {
                                 return (
                                     (key == false) ?
                                     <div className={'thumbnail-img active'} key={key}>
@@ -72,14 +69,14 @@ export const ProductSection = (props) => {
                     </div>
                 }
 
-                <img className="main-image" src={ProductImages[mainImageIndex].main}
+                <img className="main-image" src={ImagesRoutes[mainImageIndex].main}
                     onClick={handlePopupDisplay}
                     alt="displayed image"
                 />
                 
                 <div className="thumbnails-images">
                     {
-                    ProductImages.map((image, key) => {
+                    ImagesRoutes.map((image, key) => {
                         return (
                             (key == false) ?
                             <div className={'thumbnail-img active'} key={key}>
@@ -119,21 +116,21 @@ export const ProductSection = (props) => {
 
                 <div className="add-cart-item">
                     <div className="toggle-value">
-                        <img src={IconsImages.minus}
+                        <img src={IconsImagesRoutes.minus}
                             onClick={handleMinusClick} 
                             alt="minus button"
                         />
                         
                         <p>{itemNumber}</p>
 
-                        <img src={IconsImages.plus}
+                        <img src={IconsImagesRoutes.plus}
                             onClick={handlePlusClick} 
                             alt="plus button"
                         />
                     </div>
                     
                     <button type="button" onClick={(event) => props.onSubmit(event)}>
-                        <img src={IconsImages.cartBlanc} alt="icon cart" />
+                        <img src={IconsImagesRoutes.cartBlanc} alt="icon cart" />
                         <p>Add to cart</p> 
                     </button>
                 </div>

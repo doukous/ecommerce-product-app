@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import '../assets/styles/navbar.scss'
-import LogoImage from '../assets/images/logo.svg'
-import ImageAvatar from '../assets/images/image-avatar.png'
 import { useDisplayCart } from "../hooks/useDisplayCart";
-import { ProductsImagesRoutes } from "../data/ProductsImagesRoutes";
+import { ImagesRoutes } from "../data/ProductsImagesRoutes";
 import { IconsImagesRoutes } from "../data/IconsImagesRoutes"
+import '../assets/styles/navbar.scss'
 
 
 const navbarSections = ['Collections', 'Men', 'Women', 'About', 'Contact']
-const ProductImages = ProductsImagesRoutes
-const IconsImages = IconsImagesRoutes
+
+const LogoImage = new URL('../assets/images/logo.svg', import.meta.url).href
+const ImageAvatar = new URL('../assets/images/image-avatar.png', import.meta.url).href 
 
 export const NavBar = (props) => {
     const [displayCart, handleCartIconClick] = useDisplayCart()
@@ -30,7 +29,7 @@ export const NavBar = (props) => {
         <div className="navbar">
             {
                 Boolean(elementActiveState) === false &&
-                <img src={IconsImages.menu} className="sidebar-icon" onClick={toggleSideBar} alt="icon menu" />
+                <img src={IconsImagesRoutes.menu} className="sidebar-icon" onClick={toggleSideBar} alt="icon menu" />
             }
             
             <img src={LogoImage} alt="logo image" />
@@ -39,7 +38,7 @@ export const NavBar = (props) => {
                 <div className="page-links">
                     {
                         Boolean(elementActiveState) === true &&
-                        <img src={IconsImages.close} onClick={toggleSideBar} alt="close-button" />
+                        <img src={IconsImagesRoutes.close} onClick={toggleSideBar} alt="close-button" />
                     }
                     {navbarSections.map( (section, key) =>
                         {return (
@@ -50,7 +49,7 @@ export const NavBar = (props) => {
             </div>
             
             <div className="user-section">
-                <img src={IconsImages.cart} alt="icon cart" onClick={handleCartIconClick}/>
+                <img src={IconsImagesRoutes.cart} alt="icon cart" onClick={handleCartIconClick}/>
 
                 {
                     props.itemNumber > 0 && <div className="cart-number"><p>{props.itemNumber}</p></div>
@@ -68,12 +67,12 @@ export const NavBar = (props) => {
                             <>
                                 <div className="product-container">
                                     <div className="article-container">
-                                        <img src={ProductImages[0].main} alt="product-image" />
+                                        <img src={ImagesRoutes[0].main} alt="product-image" />
                                         <div className="price-infos">
                                             <p>Automn Limited Edition Sneakers</p>
                                             <p>$125.00 x {props.itemNumber} <strong>${props.itemNumber * 125}.00</strong></p>
                                         </div>
-                                        <img src={IconsImages.delete} alt="delete icon" onClick={props.onReset} />
+                                        <img src={IconsImagesRoutes.delete} alt="delete icon" onClick={props.onReset} />
                                     </div>
                                     <button title="button">Checkout</button>
                                 </div>

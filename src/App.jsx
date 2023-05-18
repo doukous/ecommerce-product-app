@@ -7,7 +7,7 @@ import "./assets/styles/style.scss"
 
 function App() {
   const [cartItemNumber, handleCartSubmit, resetCartItemNumber] = useSyncCart()
-
+  
   return (
     <>
       <NavBar itemNumber = {cartItemNumber} onReset = {resetCartItemNumber} />
