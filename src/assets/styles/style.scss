@@ -1,13 +1,12 @@
 @font-face {
-    font-family: KumbhSans-Regular;
-    src: url(../../fonts/KumbhSans/KumbhSans-Regular.ttf) format(truetype);
+  font-family: KumbhSans-Regular;
+  src: url(../../fonts/KumbhSans/KumbhSans-Regular.ttf) format(truetype);
 }
 
 @font-face {
-    font-family: KumbhSans-Bold;
-    src: url(../../fonts/KumbhSans/KumbhSans-Bold.ttf) format(truetype);
+  font-family: KumbhSans-Bold;
+  src: url(../../fonts/KumbhSans/KumbhSans-Bold.ttf) format(truetype);
 }
-
 
 $borderRadius: 0.5rem;
 $primaryOrange: hsl(26, 100%, 55%);
@@ -20,7 +19,7 @@ $grayishBlue: hsl(220, 14%, 75%);
 $lightGrayishBlue: hsl(223, 64%, 98%);
 
 body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
